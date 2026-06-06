@@ -1,5 +1,5 @@
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 class File(BaseModel):
     path : str = Field(description="The path of the file it will be kept in")
     purpose : str = Field(description="The purpose of the file, e.g 'main application logic', 'data processing logic'")
@@ -10,3 +10,10 @@ class Plan(BaseModel):
     files : list[File] = Field(description="list of all the files required for the project to be made, each with a 'path' and 'purpose' ")
     features : list[str] = Field(description="list of all the features that will be in this app. Eg : Data visualisation , Authetication, Reset button")
 
+class ImplementationTask(BaseModel):
+    file_path : str = Field(description="the path of the file that needs to be modified")
+    task_description :str = Field(description="This is the detailed description of the task that needs to be done ")
+    
+class TaskPlan(BaseModel):
+    implementation_steps : list[ImplementationTask] = Field("List of steps that needs to be tasken to implement a task")
+    model_config = ConfigDict(extra="allow")
