@@ -116,6 +116,7 @@ dependencies = [
     { name = "langchain-core" },
     { name = "langchain-groq" },
     { name = "langgraph" },
+    { name = "loadenv" },
     { name = "pip" },
     { name = "pydantic" },
     { name = "python-dotenv" },
@@ -128,6 +129,7 @@ requires-dist = [
     { name = "langchain-core", specifier = ">=0.3.72" },
     { name = "langchain-groq", specifier = ">=0.3.7" },
     { name = "langgraph", specifier = ">=0.6.3" },
+    { name = "loadenv", specifier = ">=0.1.1" },
     { name = "pip", specifier = ">=25.2" },
     { name = "pydantic", specifier = ">=2.11.7" },
     { name = "python-dotenv", specifier = ">=1.1.1" },
@@ -363,6 +365,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/e4/dd/f4c8a12987318e505b10760d30c3c2d45e8dc87ba8f47a004c753a9e7b35/langsmith-0.8.9.tar.gz", hash = "sha256:f16e37fcd5a8a2d4db30eae0e399a866a65ce5cc86218825c59409ed57a3bf53", size = 4428684, upload-time = "2026-06-03T17:56:09.448Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b5/2f/a701663c9fb4d9630448622a684bc372b4905b9a6dbe2297d55a70fde04e/langsmith-0.8.9-py3-none-any.whl", hash = "sha256:c9519cabc75568d088df045710d1b86eae9780c91054528b2aa7e6cb1fc80c52", size = 403165, upload-time = "2026-06-03T17:56:07.226Z" },
+]
+
+[[package]]
+name = "loadenv"
+version = "0.1.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/d7/a2/4ef0013d1683cdcd29ea254e3a02ac43f25323842fc8d59983eb17608f47/loadenv-0.1.1.tar.gz", hash = "sha256:8dde4a80cf733323880c118659685d822f9d1311fa15b3d7e1e2aa28223aba29", size = 7456, upload-time = "2021-09-22T22:19:41.369Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d0/ba/e29b2a5d12d5fad9c037ad7d5c3dffb22864d6511310bffa414c56408995/loadenv-0.1.1-py3-none-any.whl", hash = "sha256:e06a1d86ea1ad89a96aeb470d27de8d569a980ad7c6fd0dd0ee416cc11919853", size = 6899, upload-time = "2021-09-22T22:19:32.26Z" },
 ]
 
 [[package]]
