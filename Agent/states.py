@@ -1,4 +1,7 @@
 
+from asyncio import Task
+from typing import Optional
+
 from pydantic import BaseModel, ConfigDict, Field
 class File(BaseModel):
     path : str = Field(description="The path of the file it will be kept in")
@@ -17,3 +20,8 @@ class ImplementationTask(BaseModel):
 class TaskPlan(BaseModel):
     implementation_steps : list[ImplementationTask] = Field("List of steps that needs to be tasken to implement a task")
     model_config = ConfigDict(extra="allow")
+    
+class CoderState(BaseModel):
+    task_plan : TaskPlan = Field(description="The plan for the task to be implemented")
+    current_step_index :int = Field(0,description="The index of the current step in the implementation step")
+    current_file_content: Optional[str] = Field(None,description="Content of the file the is currently being edited or created")    
