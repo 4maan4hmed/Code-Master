@@ -30,7 +30,15 @@ def architech_agent(state:dict)->dict:
 
 @traceable
 def coder_agent(state:dict)->dict:
-    task_step:TaskPlan = state["task_steps"]
+    steps= state["task_steps"].implementation_steps #list of all the task that need to be implimented
+    current_task_index = 0
+    current_task = steps[current_task_index]
+    user_prompt =(f"task:{current_task.task_description}")
+    system_prompt = coder_system_prompt()
+    resp = llm.invoke(system_prompt+user_prompt)
+    return {
+        "code":resp.content
+    }
     
 
 
@@ -44,9 +52,9 @@ graph.add_node("architech",architech_agent)
 graph.add_node("coder",coder_agent)
 
 graph.add_edge("planner","architech")
+graph.add_edge("architech","coder")
 graph.set_entry_point("planner")
 
 agent=graph.compile()
 
 resp = agent.invoke({"user_prompt":user_prompt})
-print(resp)
